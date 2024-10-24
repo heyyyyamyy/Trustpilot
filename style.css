@@ -1,0 +1,105 @@
+body {
+    font-family: 'Arial', sans-serif;
+   
+}
+
+#hero-section {
+    background-image: url('/img/psychedelic-paper-shapes-with-copy-space.jpg'); /* Replace with actual image URL */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 50px 0;
+    color: #333;
+    width: 100%;
+    height: auto;
+}
+
+#hero-section h1 {
+    color: #333;
+}
+
+#hero-section .form-control {
+    border-radius: 50px;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+}
+
+#hero-section .btn-primary {
+    background-color: #007bff;
+    border-radius: 50px;
+}
+
+
+.review-card {
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 15px;
+}
+.review-card img {
+    max-width: 50px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.rating {
+    color: #00b67a;
+    font-weight: bold;
+}
+.see-more {
+    text-align: right;
+}
+
+.unique-hero-section {
+    background-color: #1f4d3a;
+    color: #ffffff;
+    border-radius: 20px;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.unique-hero-text {
+    max-width: 50%;
+}
+.unique-hero-text h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+.unique-hero-text p {
+    font-size: 1.25rem;
+}
+.unique-hero-button {
+    margin-top: 20px;
+}
+.unique-hero-button a {
+    color: #1f4d3a;
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 50px;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+}
+.unique-hero-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+footer {
+    background-color: #343a40;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

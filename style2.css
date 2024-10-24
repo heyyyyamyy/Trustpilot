@@ -1,0 +1,142 @@
+body {
+    background-color: #f8f7f5;
+}
+
+.company-list-header {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.company-list-header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.company-list-header p {
+    font-size: 1rem;
+    color: #666;
+}
+
+.company-list-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.company-list-info .sort-by {
+    display: flex;
+    align-items: center;
+}
+
+.company-list-info .sort-by select {
+    margin-left: 10px;
+}
+
+.company-list-info-box {
+    background-color: #e6f7ff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.company-list-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.company-list-card .company-info {
+    display: flex;
+    align-items: center;
+}
+
+.company-list-card .company-info img {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+}
+
+.company-list-card .company-info .company-details {
+    flex-grow: 1;
+}
+
+.company-list-card .company-info .company-details h5 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.company-list-card .company-info .company-details p {
+    margin: 0;
+    color: #666;
+}
+
+.company-list-card .company-info .company-details .rating {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.company-list-card .company-info .company-details .rating .stars {
+    color: #4caf50;
+    margin-right: 10px;
+}
+
+.company-list-card .company-info .company-details .rating .trustscore {
+    font-weight: bold;
+}
+
+.company-list-card .company-info .company-details .rating .reviews {
+    color: #666;
+}
+
+.company-list-card .company-info .location {
+    color: #666;
+}
+
+.company-list-card .tags {
+    margin-top: 10px;
+    color: #666;
+}
+
+.company-list-card .latest-reviews {
+    text-align: right;
+    margin-top: 10px;
+}
+
+.company-list-card .latest-reviews a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.company-list-card .latest-reviews a:hover {
+    text-decoration: underline;
+}
+
+.most-relevant {
+    background-color: #f8f7f5;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.875rem;
+    font-weight: bold;
+    color: #666;
+}
+
+footer {
+    background-color: #343a40;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
