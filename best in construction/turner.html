@@ -1,0 +1,656 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <style>
+        .review-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .review-header img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .review-header h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .review-header .rating {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+        }
+
+        .review-header .rating i {
+            color: #4CAF50;
+            margin-right: 5px;
+        }
+
+        .review-header .rating span {
+            font-size: 18px;
+            color: #4CAF50;
+        }
+
+        .review-summary {
+            border: 1px solid #e0e0e0;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .review-summary .rating-bar {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .review-summary .rating-bar span {
+            width: 50px;
+            text-align: right;
+            margin-right: 10px;
+        }
+
+        .review-summary .rating-bar .progress {
+            flex-grow: 1;
+            margin-right: 10px;
+        }
+
+        .review-summary .rating-bar .progress-bar {
+            background-color: #000;
+        }
+
+        .review-summary .rating-bar .percentage {
+            width: 30px;
+            text-align: right;
+        }
+
+        .review-filter {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .review-filter button {
+            background-color: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            padding: 5px 10px;
+        }
+
+        .review-filter select {
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            padding: 5px 10px;
+        }
+
+        .review-item {
+            border: 1px solid #e0e0e0;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .review-item .reviewer {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .review-item .reviewer img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .review-item .reviewer .name {
+            font-weight: bold;
+        }
+
+        .review-item .reviewer .location {
+            color: #888;
+            margin-left: 10px;
+        }
+
+        .review-item .reviewer .time {
+            margin-left: auto;
+            color: #888;
+        }
+
+        .review-item .review-content {
+            margin-bottom: 10px;
+        }
+
+        .review-item .review-date {
+            color: #888;
+            margin-bottom: 10px;
+        }
+
+        .review-item .review-actions {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .review-item .review-actions button {
+            background-color: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            padding: 5px 10px;
+        }
+
+        footer {
+            background-color: #343a40;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/index.html">
+                <img alt="Turner Construction Company Logo" class="d-inline-block align-top" height="50"
+                    src="/img/logo.webp" width="50" />
+            </a>
+            <button aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+                class="navbar-toggler" data-bs-target="#navbarNav" data-bs-toggle="collapse" type="button">
+                <span class="navbar-toggler-icon">
+                </span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a aria-current="page" class="nav-link active" href="/index.html">
+                            Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            About
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">
+                            Contact
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-5">
+        <div class="review-header">
+            <img alt="Turner Construction Company Logo" height="50" src="/img/turner.jpeg" width="50" />
+            <h1>
+                Turner Construction
+            </h1>
+            <div class="rating">
+                <i class="fas fa-star">
+                </i>
+                <span>
+                    4.5
+                </span>
+            </div>
+        </div>
+        <div class="review-summary">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <div class="d-flex">
+                    <i class="fas fa-star">
+                    </i>
+                    <i class="fas fa-star">
+                    </i>
+                    <i class="fas fa-star">
+                    </i>
+                    <i class="fas fa-star">
+                    </i>
+                    <i class="fas fa-star">
+                    </i>
+                </div>
+            </div>
+            <h2>
+                Reviews
+                <span class="text-success">
+                    4.5
+                </span>
+            </h2>
+            <p>
+                1,500 total
+            </p>
+            <div class="rating-bar">
+                <span>
+                    5-star
+                </span>
+                <div class="progress">
+                    <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="80" class="progress-bar"
+                        role="progressbar" style="width: 80%;">
+                    </div>
+                </div>
+                <span class="percentage">
+                    80%
+                </span>
+            </div>
+            <div class="rating-bar">
+                <span>
+                    4-star
+                </span>
+                <div class="progress">
+                    <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="15" class="progress-bar"
+                        role="progressbar" style="width: 15%;">
+                    </div>
+                </div>
+                <span class="percentage">
+                    15%
+                </span>
+            </div>
+            <div class="rating-bar">
+                <span>
+                    3-star
+                </span>
+                <div class="progress">
+                    <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="3" class="progress-bar" role="progressbar"
+                        style="width: 3%;">
+                    </div>
+                </div>
+                <span class="percentage">
+                    3%
+                </span>
+            </div>
+            <div class="rating-bar">
+                <span>
+                    2-star
+                </span>
+                <div class="progress">
+                    <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="1" class="progress-bar" role="progressbar"
+                        style="width: 1%;">
+                    </div>
+                </div>
+                <span class="percentage">
+                    1%
+                </span>
+            </div>
+            <div class="rating-bar">
+                <span>
+                    1-star
+                </span>
+                <div class="progress">
+                    <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="1" class="progress-bar" role="progressbar"
+                        style="width: 1%;">
+                    </div>
+                </div>
+                <span class="percentage">
+                    1%
+                </span>
+            </div>
+            <div class="review-filter">
+                <button class="btn btn-outline-secondary">
+                    Filter
+                </button>
+                <select class="form-select">
+                    <option selected="">
+                        Most relevant
+                    </option>
+                </select>
+            </div>
+        </div>
+        <div class="review-item">
+            <div class="reviewer">
+                <div>
+                    <span class="name">
+                        Alejandro García
+                    </span>
+                    <span class="location">
+                        NY
+                    </span>
+                </div>
+            </div>
+            <div class="review-content">
+                <div class="d-flex mb-2">
+                    <i class="fas fa-star text-warning">
+                    </i>
+                    <i class="fas fa-star text-warning">
+                    </i>
+                    <i class="fas fa-star text-warning">
+                    </i>
+                    <i class="fas fa-star text-warning">
+                    </i>
+                    <i class="fas fa-star text-warning">
+                    </i>
+                </div>
+                <p>
+                    Excelente empresa para trabajar!
+                </p>
+                <p>
+                    La gestión es muy solidaria y el equipo es genial.
+                </p>
+            </div>
+            <div class="review-actions">
+                <button class="btn btn-outline-secondary">
+                    Helpful
+                </button>
+                <button class="btn btn-outline-secondary">
+                    Report
+                </button>
+            </div>
+        </div>
+        <div class="review-item">
+            <div class="reviewer">
+                <div>
+                    <span class="name">
+                        Beatriz Fernández
+                    </span>
+                    <span class="location">
+                        CA
+                    </span>
+                </div>
+            </div>
+            <div class="review-content">
+                <div class="d-flex mb-2">
+                    <i class="fas fa-star text-warning">
+                    </i>
+                    <i class="fas fa-star text-warning">
+                    </i>
+                    <i class="fas fa-star text-warning">
+                    </i>
+                    <i class="fas fa-star text-secondary">
+                    </i>
+                    <i class="fas fa-star text-secondary">
+                    </i>
+                </div>
+                <p>
+                    Buen ambiente de trabajo pero puede ser estresante a veces.
+                </p>
+                <p>
+                    Los proyectos son desafiantes pero gratificantes.
+                </p>
+            </div>
+            <div class="review-actions">
+                <button class="btn btn-outline-secondary">
+                    Helpful
+                </button>
+                <button class="btn btn-outline-secondary">
+                    Report
+                </button>
+            </div>
+        </div>
+        <div class="review-item">
+            <div class="reviewer">
+                <div>
+                    <span class="name">
+                        Carlos Martínez
+                    </span>
+                    <span class="location">
+                        TX
+                    </span>
+                </div>
+            </div>
+            <div class="review-content">
+                <div class="d-flex mb-2">
+                    <i class="fas fa-star text-warning">
+                    </i>
+                    <i class="fas fa-star text-warning">
+                    </i>
+                    <i class="fas fa-star text-warning">
+                    </i>
+                    <i class="fas fa-star text-warning">
+                    </i>
+                    <i class="fas fa-star text-warning">
+                    </i>
+                </div>
+                <p>
+                    ¡Fantástica cultura de trabajo!
+                </p>
+                <p>
+                    El equipo es muy colaborativo y solidario.
+                </p>
+            </div>
+            <div class="review-actions">
+                <button class="btn btn-outline-secondary">
+                    Helpful
+                </button>
+                <button class="btn btn-outline-secondary">
+                    Report
+                </button>
+            </div>
+        </div>
+        <div class="review-item">
+            <div class="reviewer">
+                <div>
+                    <span class="name">
+                        Daniela López
+                    </span>
+                    <span class="location">
+                        FL
+                    </span>
+                </div>
+            </div>
+            <div class="review-content">
+                <div class="d-flex mb-2">
+                    <i class="fas fa-star text-warning">
+                    </i>
+                    <i class="fas fa-star text-warning">
+                    </i>
+                    <i class="fas fa-star text-warning">
+                    </i>
+                    <i class="fas fa-star text-secondary">
+                    </i>
+                    <i class="fas fa-star text-secondary">
+                    </i>
+                </div>
+                <p>
+                    Buena empresa pero el equilibrio entre trabajo y vida puede ser difícil.
+                </p>
+                <p>
+                    En general, una experiencia positiva con margen de mejora.
+                </p>
+            </div>
+            <div class="review-actions">
+                <button class="btn btn-outline-secondary">
+                    Helpful
+                </button>
+                <button class="btn btn-outline-secondary">
+                    Report
+                </button>
+            </div>
+        </div>
+        <div class="review-item">
+            <div class="reviewer">
+                <div>
+                    <span class="name">
+                        Eduardo Pérez
+                    </span>
+                    <span class="location">
+                        WA
+                    </span>
+                </div>
+            </div>
+            <div class="review-content">
+                <div class="d-flex mb-2">
+                    <i class="fas fa-star text-warning">
+                    </i>
+                    <i class="fas fa-star text-warning">
+                    </i>
+                    <i class="fas fa-star text-warning">
+                    </i>
+                    <i class="fas fa-star text-warning">
+                    </i>
+                    <i class="fas fa-star text-warning">
+                    </i>
+                </div>
+                <p>
+                    ¡Servicio increíble!
+                </p>
+                <p>
+                    Muy satisfecho con mi experiencia en Turner Construction.
+                </p>
+            </div>
+            <div class="review-actions">
+                <button class="btn btn-outline-secondary">
+                    Helpful
+                </button>
+                <button class="btn btn-outline-secondary">
+                    Report
+                </button>
+            </div>
+        </div>
+        <div class="review-item">
+            <div class="reviewer">
+                <div>
+                    <span class="name">
+                        Fernanda Rodríguez
+                    </span>
+                    <span class="location">
+                        IL
+                    </span>
+                </div>
+            </div>
+            <div class="review-content">
+                <div class="d-flex mb-2">
+                    <i class="fas fa-star text-warning">
+                    </i>
+                    <i class="fas fa-star text-warning">
+                    </i>
+                    <i class="fas fa-star text-warning">
+                    </i>
+                    <i class="fas fa-star text-warning">
+                    </i>
+                    <i class="fas fa-star text-secondary">
+                    </i>
+                </div>
+                <p>
+                    ¡En general, un buen lugar para trabajar!
+                </p>
+                <p>
+                    He aprendido mucho y he crecido profesionalmente.
+                </p>
+            </div>
+            <div class="review-actions">
+                <button class="btn btn-outline-secondary">
+                    Helpful
+                </button>
+                <button class="btn btn-outline-secondary">
+                    Report
+                </button>
+            </div>
+        </div>
+        <div class="review-item">
+            <div class="reviewer">
+                <div>
+                    <span class="name">
+                        Gabriel Sánchez
+                    </span>
+                    <span class="location">
+                        OH
+                    </span>
+                </div>
+            </div>
+            <div class="review-content">
+                <div class="d-flex mb-2">
+                    <i class="fas fa-star text-warning">
+                    </i>
+                    <i class="fas fa-star text-warning">
+                    </i>
+                    <i class="fas fa-star text-warning">
+                    </i>
+                    <i class="fas fa-star text-warning">
+                    </i>
+                    <i class="fas fa-star text-warning">
+                    </i>
+                </div>
+                <p>
+                    ¡Increíble empresa para trabajar!
+                </p>
+                <p>
+                    Los proyectos son emocionantes y el equipo es genial.
+                </p>
+            </div>
+            <div class="review-actions">
+                <button class="btn btn-outline-secondary">
+                    Helpful
+                </button>
+                <button class="btn btn-outline-secondary">
+                    Report
+                </button>
+            </div>
+        </div>
+        <div class="review-item">
+            <div class="reviewer">
+                <div>
+                    <span class="name">
+                        Helena Torres
+                    </span>
+                    <span class="location">
+                        NV
+                    </span>
+                </div>
+
+            </div>
+            <div class="review-content">
+                <div class="d-flex mb-2">
+                    <i class="fas fa-star text-warning">
+                    </i>
+                    <i class="fas fa-star text-warning">
+                    </i>
+                    <i class="fas fa-star text-warning">
+                    </i>
+                    <i class="fas fa-star text-secondary">
+                    </i>
+                    <i class="fas fa-star text-secondary">
+                    </i>
+                </div>
+                <p>
+                    Buena experiencia, pero con margen de mejora.
+                </p>
+                <p>
+                    Me sentí un poco apresurada durante mi cita.
+                </p>
+            </div>
+            <div class="review-actions">
+                <button class="btn btn-outline-secondary">
+                    Helpful
+                </button>
+                <button class="btn btn-outline-secondary">
+                    Report
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>
+                © 2023 Pilot Review. All rights reserved.
+            </p>
+            <p>
+                <a href="#">
+                    Privacy Policy
+                </a>
+                |
+                <a href="#">
+                    Terms of Service
+                </a>
+            </p>
+        </div>
+    </footer>
+</body>
+
+</html>
