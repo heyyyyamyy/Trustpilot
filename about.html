@@ -2,8 +2,8 @@
 
 <head>
     <title>About Us - Review Pilot</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
     <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" rel="stylesheet" />
     <style>
@@ -16,7 +16,7 @@
         }
 
         .container {
-            width: 80%;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
@@ -49,6 +49,58 @@
         footer a:hover {
             text-decoration: underline;
         }
+
+        .section-title {
+            margin-top: 50px;
+            font-size: 2em;
+            color: #333;
+        }
+
+        .image-text {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .image-text img {
+            margin-right: 20px;
+            border-radius: 10px;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .card {
+            margin-top: 20px;
+        }
+
+        .card img {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        @media (max-width: 768px) {
+            .image-text {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .image-text img {
+                margin: 0 0 20px 0;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .section-title {
+                font-size: 1.5em;
+            }
+
+            p {
+                font-size: 1em;
+            }
+        }
     </style>
 </head>
 
@@ -61,25 +113,18 @@
             </a>
             <button aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
                 class="navbar-toggler" data-bs-target="#navbarNav" data-bs-toggle="collapse" type="button">
-                <span class="navbar-toggler-icon">
-                </span>
+                <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a aria-current="page" class="nav-link active" href="/index.html">
-                            Home
-                        </a>
+                        <a aria-current="page" class="nav-link active" href="/index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">
-                            About
-                        </a>
+                        <a class="nav-link" href="about.html">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">
-                            Contact
-                        </a>
+                        <a class="nav-link" href="contact.html">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -87,39 +132,216 @@
     </nav>
     <div class="container">
         <h1>About Us</h1>
-        <p>Welcome to Review Pilot, your trusted source for comprehensive reviews of top companies across various
-            industries. Our mission is to provide you with detailed, unbiased, and up-to-date information to help you
-            make informed decisions. Whether you're looking for the best tech companies, reliable service providers, or
-            top-rated products, Review Pilot is here to guide you.</p>
-        <p>Our team of experts meticulously researches and evaluates each company, ensuring that you receive accurate
-            and valuable insights. We understand that making the right choice can be challenging, which is why we are
-            committed to transparency and thoroughness in our reviews. Our goal is to empower you with the knowledge you
-            need to choose the best options available.</p>
-        <p>At Review Pilot, we cover a wide range of industries including technology, finance, healthcare, and more. We
-            believe in the power of informed decisions and strive to be your go-to platform for reliable company
-            reviews. Our dedication to quality and integrity sets us apart, and we are proud to be a trusted resource
-            for consumers and businesses alike.</p>
-        <p>Thank you for choosing Review Pilot. We are excited to be part of your journey in discovering the best
-            companies and services. If you have any questions or need further assistance, please do not hesitate to
-            contact us. Together, we can navigate the vast landscape of options and make choices that truly matter.</p>
+        <div class="image-text">
+            <img alt="Team of experts working together in an office environment" height="150"
+                src="https://storage.googleapis.com/a1aa/image/RrMW5lYb9SZ5GFPYHII0eXyuFlojpIsCOBj7UX4vf44fbqUnA.jpg"
+                width="150" />
+            <p>
+                Welcome to Review Pilot, your trusted source for comprehensive reviews of top companies across various
+                industries. Our mission is to provide you with detailed, unbiased, and up-to-date information to help
+                you make informed decisions. Whether you're looking for the best tech companies, reliable service
+                providers, or top-rated products, Review Pilot is here to guide you.
+            </p>
+        </div>
+        <div class="image-text">
+            <img alt="Research and evaluation process with charts and graphs" height="150"
+                src="https://storage.googleapis.com/a1aa/image/784Wevn8nH0EcKsuPZ1FdkMFRMedM9F8LgA4WtfDRGHJcqUnA.jpg"
+                width="150" />
+            <p>
+                Our team of experts meticulously researches and evaluates each company, ensuring that you receive
+                accurate and valuable insights. We understand that making the right choice can be challenging, which is
+                why we are committed to transparency and thoroughness in our reviews. Our goal is to empower you with
+                the knowledge you need to choose the best options available.
+            </p>
+        </div>
+        <div class="image-text">
+            <img alt="Diverse industries represented by icons of technology, finance, and healthcare" height="150"
+                src="https://storage.googleapis.com/a1aa/image/HNCTDUIeK0yzV6wwg74e2fALfM0qeyWbfLDa3JcSfEpPfNVqTA.jpg"
+                width="150" />
+            <p>
+                At Review Pilot, we cover a wide range of industries including technology, finance, healthcare, and
+                more. We believe in the power of informed decisions and strive to be your go-to platform for reliable
+                company reviews. Our dedication to quality and integrity sets us apart, and we are proud to be a trusted
+                resource for consumers and businesses alike.
+            </p>
+        </div>
+        <div class="image-text">
+            <img alt="Customer support team ready to assist" height="150"
+                src="https://storage.googleapis.com/a1aa/image/w8psuXjEMB7xPZsmN0BffSzWsezGSgy9zqB6H5NmEXn4bqUnA.jpg"
+                width="150" />
+            <p>
+                Thank you for choosing Review Pilot. We are excited to be part of your journey in discovering the best
+                companies and services. If you have any questions or need further assistance, please do not hesitate to
+                contact us. Together, we can navigate the vast landscape of options and make choices that truly matter.
+            </p>
+        </div>
+        <h2 class="section-title">Our Vision</h2>
+        <div class="image-text">
+            <img alt="Visionary leader looking towards the future" height="150"
+                src="https://storage.googleapis.com/a1aa/image/QX0kRf1LW7V8Pal8AR0ZrEMLHFU9has1VaZiQyxf8c8COVqTA.jpg"
+                width="150" />
+            <p>
+                Our vision is to become the most trusted and comprehensive review platform, empowering consumers and
+                businesses to make informed decisions with confidence. We aim to set the standard for quality and
+                integrity in the review industry.
+            </p>
+        </div>
+        <h2 class="section-title">Our Aim</h2>
+        <div class="image-text">
+            <img alt="Target with an arrow hitting the bullseye" height="150"
+                src="https://storage.googleapis.com/a1aa/image/PFIU4gcozZq6ORdgUuTeqsmog2uSk3xMC8dG86eQ7IH4NVqTA.jpg"
+                width="150" />
+            <p>
+                Our aim is to provide accurate, unbiased, and detailed reviews that help our users make the best
+                choices. We strive to continuously improve our processes and expand our coverage to include more
+                industries and companies.
+            </p>
+        </div>
+        <h2 class="section-title">Sectors We Deal With</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img alt="Technology sector with modern gadgets and devices" class="card-img-top" height="200"
+                        src="https://storage.googleapis.com/a1aa/image/M1rdIWb5ZpLpFZv3EAt7QtqGGGR8OdqfAiZLx0nQKLjAnK1JA.jpg"
+                        width="300" />
+                    <div class="card-body">
+                        <h5 class="card-title">Technology</h5>
+                        <p class="card-text">
+                            We review the latest tech companies and products to help you stay ahead in the digital
+                            world.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img alt="Finance sector with financial charts and graphs" class="card-img-top" height="200"
+                        src="https://storage.googleapis.com/a1aa/image/Ff1P2WqaHI0wba82f8SU4RFHode2V77HJ2phFCEFnSsLcqUnA.jpg"
+                        width="300" />
+                    <div class="card-body">
+                        <h5 class="card-title">Finance</h5>
+                        <p class="card-text">
+                            Our finance sector reviews cover banks, investment firms, and financial services.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img alt="Healthcare sector with medical professionals and equipment" class="card-img-top"
+                        height="200"
+                        src="https://storage.googleapis.com/a1aa/image/z0PV0N22GCqTFVGYjfOU9K3Hnv6TElJ3El0MrAPBaNn6mK1JA.jpg"
+                        width="300" />
+                    <div class="card-body">
+                        <h5 class="card-title">Healthcare</h5>
+                        <p class="card-text">
+                            We provide insights into healthcare providers, medical devices, and wellness services.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img alt="Education sector with students and teachers" class="card-img-top" height="200"
+                        src="https://storage.googleapis.com/a1aa/image/moy8j74Lkjb5HVRFxeOTcHuU7VvnHKsth0nEK0erV79zNVqTA.jpg"
+                        width="300" />
+                    <div class="card-body">
+                        <h5 class="card-title">Education</h5>
+                        <p class="card-text">
+                            Our education sector reviews include schools, universities, and online learning platforms.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img alt="Retail sector with shopping bags and stores" class="card-img-top" height="200"
+                        src="https://storage.googleapis.com/a1aa/image/AcmDlms30DrcMJpJp2YeDIofeXlcEACh4z5iQ08tnyeB3UpOB.jpg"
+                        width="300" />
+                    <div class="card-body">
+                        <h5 class="card-title">Retail</h5>
+                        <p class="card-text">
+                            We review retail companies, e-commerce platforms, and consumer products.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img alt="Travel and Tourism sector with famous landmarks" class="card-img-top" height="200"
+                        src="https://storage.googleapis.com/a1aa/image/O3CK7iueXHwxJCvNtEcYHqyIpflc3BXcmjUYKPDUSchxNVqTA.jpg"
+                        width="300" />
+                    <div class="card-body">
+                        <h5 class="card-title">Travel and Tourism</h5>
+                        <p class="card-text">
+                            Our travel and tourism reviews cover airlines, hotels, and travel agencies.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img alt="Real Estate sector with houses and buildings" class="card-img-top" height="200"
+                        src="https://storage.googleapis.com/a1aa/image/uh2bl8u631qgL1uMxgVfVeY0lLzv1fbTGtSqh6SHg15pbqUnA.jpg"
+                        width="300" />
+                    <div class="card-body">
+                        <h5 class="card-title">Real Estate</h5>
+                        <p class="card-text">
+                            We provide reviews on real estate companies, property listings, and housing services.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img alt="Automotive sector with cars and vehicles" class="card-img-top" height="200"
+                        src="https://storage.googleapis.com/a1aa/image/6ZJNpgYVri6GB9X0TebIRpd9WZSjf0EX1S68et3XmWQ3bqUnA.jpg"
+                        width="300" />
+                    <div class="card-body">
+                        <h5 class="card-title">Automotive</h5>
+                        <p class="card-text">
+                            Our automotive reviews include car manufacturers, dealerships, and auto services.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img alt="Entertainment sector with movies and music" class="card-img-top" height="200"
+                        src="https://storage.googleapis.com/a1aa/image/s6BSOFrZdkbDAVxNofsNDWhA0lRruJgMkzYJ209RMht7mK1JA.jpg"
+                        width="300" />
+                    <div class="card-body">
+                        <h5 class="card-title">Entertainment</h5>
+                        <p class="card-text">
+                            We review entertainment companies, streaming services, and media outlets.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img alt="Food and Beverage sector with restaurants and food products" class="card-img-top"
+                        height="200"
+                        src="https://storage.googleapis.com/a1aa/image/K4bwClhho57NCNW30WLxsZDZB0qN2tfY0unxfRyjHr06NVqTA.jpg"
+                        width="300" />
+                    <div class="card-body">
+                        <h5 class="card-title">Food and Beverage</h5>
+                        <p class="card-text">
+                            Our food and beverage reviews cover restaurants, food products, and beverage companies.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
     <footer>
         <div class="container">
+            <h6>© 2023 Pilot Review. All rights reserved.</h6>
             <h6>
-                © 2023 Pilot Review. All rights reserved.
-                </p>
-                <h6>
-                    <a href="#">
-                        Privacy Policy
-                    </a>
-                    |
-                    <a href="#">
-                        Terms of Service
-                    </a>
-                    </p>
+                <a href="#">Privacy Policy</a> |
+                <a href="#">Terms of Service</a>
+            </h6>
         </div>
     </footer>
-</body>
-
-</html>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-qj0e7r+0U5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5y5Q5K5"></script>
