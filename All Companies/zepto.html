@@ -1,0 +1,647 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link rel="icon" type="image/png" href="/img/logo.webp">
+
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <title>Zepto</title>
+
+    <style>
+        .review-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .review-header img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .review-header h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .review-header .rating {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+        }
+
+        .review-header .rating i {
+            color: #4CAF50;
+            margin-right: 5px;
+        }
+
+        .review-header .rating span {
+            font-size: 18px;
+            color: #4CAF50;
+        }
+
+        .review-summary {
+            border: 1px solid #e0e0e0;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .review-summary .rating-bar {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .review-summary .rating-bar span {
+            width: 50px;
+            text-align: right;
+            margin-right: 10px;
+        }
+
+        .review-summary .rating-bar .progress {
+            flex-grow: 1;
+            margin-right: 10px;
+        }
+
+        .review-summary .rating-bar .progress-bar {
+            background-color: #000;
+        }
+
+        .review-summary .rating-bar .percentage {
+            width: 30px;
+            text-align: right;
+        }
+
+        .review-filter {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .review-filter button {
+            background-color: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            padding: 5px 10px;
+        }
+
+        .review-filter select {
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            padding: 5px 10px;
+        }
+
+        .review-item {
+            border: 1px solid #e0e0e0;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .review-item .reviewer {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .review-item .reviewer .name {
+            font-weight: bold;
+        }
+
+        .review-item .reviewer .location {
+            color: #888;
+            margin-left: 10px;
+        }
+
+        .review-item .reviewer .time {
+            margin-left: auto;
+            color: #888;
+        }
+
+        .review-item .review-content {
+            margin-bottom: 10px;
+        }
+
+        .review-item .review-date {
+            color: #888;
+            margin-bottom: 10px;
+        }
+
+        .review-item .review-actions {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .review-item .review-actions button {
+            background-color: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            padding: 5px 10px;
+        }
+
+        footer {
+            background-color: #343a40;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/index.html">
+                <img alt="Kinexa Solution Company Logo" class="d-inline-block align-top" height="50"
+                    src="/img/logo.webp" width="50" />
+            </a>
+            <button aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+                class="navbar-toggler" data-bs-target="#navbarNav" data-bs-toggle="collapse" type="button">
+                <span class="navbar-toggler-icon">
+                </span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a aria-current="page" class="nav-link active" href="/index.html">
+                            Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about.html">
+                            About
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact.html">
+                            Contact
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-5">
+        <div class="review-header">
+            <img alt="" height="50" src="/img/zepto.png" width="50" />
+            <h1>
+                Zepto
+            </h1>
+            <div class="rating">
+                <i class="fas fa-star">
+                </i>
+                <span>
+                    4.4
+                </span>
+            </div>
+        </div>
+        <div class="review-summary">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <div class="d-flex">
+                    <i class="fas fa-star">
+                    </i>
+                    <i class="fas fa-star">
+                    </i>
+                    <i class="fas fa-star">
+                    </i>
+                    <i class="fas fa-star">
+                    </i>
+                    <i class="fas fa-star">
+                    </i>
+                </div>
+            </div>
+            <h2>
+                Reviews
+                <span class="text-success">
+                    4.4
+                </span>
+            </h2>
+            <p>
+                68050
+            </p>
+            <div class="rating-bar">
+                <span>
+                    5-star
+                </span>
+                <div class="progress">
+                    <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="85" class="progress-bar"
+                        role="progressbar" style="width: 85%;">
+                    </div>
+                </div>
+                <span class="percentage">
+                    85%
+                </span>
+            </div>
+            <div class="rating-bar">
+                <span>
+                    4-star
+                </span>
+                <div class="progress">
+                    <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="10" class="progress-bar"
+                        role="progressbar" style="width: 10%;">
+                    </div>
+                </div>
+                <span class="percentage">
+                    10%
+                </span>
+            </div>
+            <div class="rating-bar">
+                <span>
+                    3-star
+                </span>
+                <div class="progress">
+                    <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="3" class="progress-bar" role="progressbar"
+                        style="width: 3%;">
+                    </div>
+                </div>
+                <span class="percentage">
+                    3%
+                </span>
+            </div>
+            <div class="rating-bar">
+                <span>
+                    2-star
+                </span>
+                <div class="progress">
+                    <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="1" class="progress-bar" role="progressbar"
+                        style="width: 1%;">
+                    </div>
+                </div>
+                <span class="percentage">
+                    1%
+                </span>
+            </div>
+            <div class="rating-bar">
+                <span>
+                    1-star
+                </span>
+                <div class="progress">
+                    <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="1" class="progress-bar" role="progressbar"
+                        style="width: 1%;">
+                    </div>
+                </div>
+                <span class="percentage">
+                    1%
+                </span>
+            </div>
+            <div class="review-filter">
+                <button class="btn btn-outline-secondary">
+                    Filter
+                </button>
+                <select class="form-select">
+                    <option selected="">
+                        Most relevant
+                    </option>
+                </select>
+            </div>
+        </div>
+
+        <div class="review-item">
+            <div class="reviewer">
+                <div>
+                    <span class="name">Arjun Pradhan</span>
+                    <span class="location">Bhubaneswar, Odisha</span>
+                </div>
+            </div>
+            <div class="review-content">
+                <div class="d-flex mb-2">
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                </div>
+                <p>Great place to work! The environment is friendly, and the growth opportunities are amazing. Zepto
+                    values its employees.</p>
+            </div>
+            <div class="review-actions">
+                <button class="btn btn-outline-secondary">Helpful</button>
+                <button class="btn btn-outline-secondary">Report</button>
+            </div>
+        </div>
+
+        <div class="review-item">
+            <div class="reviewer">
+                <div>
+                    <span class="name">Soumya Das</span>
+                    <span class="location">Kolkata, West Bengal</span>
+                </div>
+            </div>
+            <div class="review-content">
+                <div class="d-flex mb-2">
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                </div>
+                <p>The leadership team at Zepto is very supportive, making it a great company to build your career.</p>
+            </div>
+            <div class="review-actions">
+                <button class="btn btn-outline-secondary">Helpful</button>
+                <button class="btn btn-outline-secondary">Report</button>
+            </div>
+        </div>
+
+        <div class="review-item">
+            <div class="reviewer">
+                <div>
+                    <span class="name">Saurabh Mukherjee</span>
+                    <span class="location">Kolkata, West Bengal</span>
+                </div>
+            </div>
+            <div class="review-content">
+                <div class="d-flex mb-2">
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                </div>
+                <p>Zepto offers a fast-paced environment with a lot of innovation. The work culture is dynamic and
+                    supportive.</p>
+            </div>
+            <div class="review-actions">
+                <button class="btn btn-outline-secondary">Helpful</button>
+                <button class="btn btn-outline-secondary">Report</button>
+            </div>
+        </div>
+
+        <div class="review-item">
+            <div class="reviewer">
+                <div>
+                    <span class="name">Rajeev Bhagat</span>
+                    <span class="location">Jaipur, Rajasthan</span>
+                </div>
+            </div>
+            <div class="review-content">
+                <div class="d-flex mb-2">
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                </div>
+                <p>Work-life balance is excellent, and there are plenty of opportunities for growth within the company.
+                </p>
+            </div>
+            <div class="review-actions">
+                <button class="btn btn-outline-secondary">Helpful</button>
+                <button class="btn btn-outline-secondary">Report</button>
+            </div>
+        </div>
+
+        <div class="review-item">
+            <div class="reviewer">
+                <div>
+                    <span class="name">Priya Choudhury</span>
+                    <span class="location">Bhubaneswar, Odisha</span>
+                </div>
+            </div>
+            <div class="review-content">
+                <div class="d-flex mb-2">
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                </div>
+                <p>The work environment is friendly, and Zepto encourages innovation and creativity from its employees.
+                </p>
+            </div>
+            <div class="review-actions">
+                <button class="btn btn-outline-secondary">Helpful</button>
+                <button class="btn btn-outline-secondary">Report</button>
+            </div>
+        </div>
+
+        <div class="review-item">
+            <div class="reviewer">
+                <div>
+                    <span class="name">Ayesha Khan</span>
+                    <span class="location">Mumbai, Maharashtra</span>
+                </div>
+            </div>
+            <div class="review-content">
+                <div class="d-flex mb-2">
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                </div>
+                <p>Working at Zepto has been an incredible learning experience. The team is very supportive, and the
+                    work culture is great.</p>
+            </div>
+            <div class="review-actions">
+                <button class="btn btn-outline-secondary">Helpful</button>
+                <button class="btn btn-outline-secondary">Report</button>
+            </div>
+        </div>
+
+        <div class="review-item">
+            <div class="reviewer">
+                <div>
+                    <span class="name">Mohammad Irfan</span>
+                    <span class="location">Hyderabad, Telangana</span>
+                </div>
+            </div>
+            <div class="review-content">
+                <div class="d-flex mb-2">
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                </div>
+                <p>Zepto provides great opportunities for career advancement. It’s a company that truly values employee
+                    growth.</p>
+            </div>
+            <div class="review-actions">
+                <button class="btn btn-outline-secondary">Helpful</button>
+                <button class="btn btn-outline-secondary">Report</button>
+            </div>
+        </div>
+
+        <div class="review-item">
+            <div class="reviewer">
+                <div>
+                    <span class="name">Sneha Sharma</span>
+                    <span class="location">Delhi</span>
+                </div>
+            </div>
+            <div class="review-content">
+                <div class="d-flex mb-2">
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                </div>
+                <p>The culture at Zepto is amazing. They focus on personal growth and the company’s success.</p>
+            </div>
+            <div class="review-actions">
+                <button class="btn btn-outline-secondary">Helpful</button>
+                <button class="btn btn-outline-secondary">Report</button>
+            </div>
+        </div>
+
+        <div class="review-item">
+            <div class="reviewer">
+                <div>
+                    <span class="name">Rahul Singh</span>
+                    <span class="location">Noida, Uttar Pradesh</span>
+                </div>
+            </div>
+            <div class="review-content">
+                <div class="d-flex mb-2">
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                </div>
+                <p>Fantastic learning opportunities! The environment is fast-paced, and management encourages new ideas.
+                </p>
+            </div>
+            <div class="review-actions">
+                <button class="btn btn-outline-secondary">Helpful</button>
+                <button class="btn btn-outline-secondary">Report</button>
+            </div>
+        </div>
+
+        <div class="review-item">
+            <div class="reviewer">
+                <div>
+                    <span class="name">Tanuja Patel</span>
+                    <span class="location">Ahmedabad, Gujarat</span>
+                </div>
+            </div>
+            <div class="review-content">
+                <div class="d-flex mb-2">
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                </div>
+                <p>Zepto is a place where you can grow and thrive. The work culture is open and collaborative.</p>
+            </div>
+            <div class="review-actions">
+                <button class="btn btn-outline-secondary">Helpful</button>
+                <button class="btn btn-outline-secondary">Report</button>
+            </div>
+        </div>
+
+        <div class="review-item">
+            <div class="reviewer">
+                <div>
+                    <span class="name">Rakesh Soni</span>
+                    <span class="location">Jodhpur, Rajasthan</span>
+                </div>
+            </div>
+            <div class="review-content">
+                <div class="d-flex mb-2">
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                </div>
+                <p>A great company to work for! Zepto offers an amazing work-life balance, and the work environment is
+                    wonderful.</p>
+            </div>
+            <div class="review-actions">
+                <button class="btn btn-outline-secondary">Helpful</button>
+                <button class="btn btn-outline-secondary">Report</button>
+            </div>
+        </div>
+
+        <div class="review-item">
+            <div class="reviewer">
+                <div>
+                    <span class="name">Ananya Banerjee</span>
+                    <span class="location">Kolkata, West Bengal</span>
+                </div>
+            </div>
+            <div class="review-content">
+                <div class="d-flex mb-2">
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                </div>
+                <p>Excellent company culture with immense opportunities for professional development.</p>
+            </div>
+            <div class="review-actions">
+                <button class="btn btn-outline-secondary">Helpful</button>
+                <button class="btn btn-outline-secondary">Report</button>
+            </div>
+        </div>
+
+        <div class="review-item">
+            <div class="reviewer">
+                <div>
+                    <span class="name">Akash Gupta</span>
+                    <span class="location">Gurgaon, Haryana</span>
+                </div>
+            </div>
+            <div class="review-content">
+                <div class="d-flex mb-2">
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                    <i class="fas fa-star text-warning"></i>
+                </div>
+                <p>Great company! The management is transparent, and you can grow within the company.</p>
+            </div>
+            <div class="review-actions">
+                <button class="btn btn-outline-secondary">Helpful</button>
+                <button class="btn btn-outline-secondary">Report</button>
+            </div>
+        </div>
+
+        <!-- Continue for the remaining names... -->
+
+
+
+
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>
+                © 2024 Trusted Pilot All rights reserved.
+            </p>
+            <p>
+                <a href="#">
+                    Privacy Policy
+                </a>
+                |
+                <a href="#">
+                    Terms of Service
+                </a>
+            </p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
